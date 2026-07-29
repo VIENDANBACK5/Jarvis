@@ -12,23 +12,24 @@ venv/
 .venv/
 env/
 
-# Environment variables
+# Environment variables & secrets
 .env
-.env.local
-.env.production
+.env.*
+!.env.example
 
-# IDE
+# IDE & Editor
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.claude/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Data (never commit large data)
+# Data & Databases (never commit large data/secrets)
 data/
 *.db
 *.sqlite3
@@ -37,12 +38,18 @@ data/
 logs/
 *.log
 
-# Test coverage
+# Test coverage & Pytest cache
 htmlcov/
 .coverage
 coverage.xml
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# Docker
+# Jarvis Local Agent Session & Permission State
+.jarvis/
+
+# Docker overrides
 docker-compose.override.yml
 
 # Node (frontend)
@@ -51,8 +58,8 @@ node_modules/
 out/
 .nuxt/
 
-
-# Build
+# Build & Temp
 *.pyc
 *.pyo
-
+*.tmp
+*.bak
