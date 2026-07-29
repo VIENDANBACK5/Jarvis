@@ -4,7 +4,7 @@ import pytest
 import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 
-from src.main import app
+from backend.main import app
 
 
 @pytest_asyncio.fixture
@@ -15,15 +15,21 @@ async def client():
         yield ac
 
 
-@pytest.fixture
-def mock_llm():
-    """Mock LLM to avoid calling OpenAI during tests.
+@pytest.fixture(autouse=True)
+def mock_llm_router(request):
+    """Tự động mock LLM router để tránh gọi API thực tế khi chạy test."""
+    if "test_local_model_routing" in request.node.name:
+        yield None
+        return
 
-    Usage in test:
-        def test_something(mock_llm):
-            # LLM calls will return mock response instead of hitting OpenAI
-            ...
-    """
-    mock = AsyncMock()
-    mock.ainvoke.return_value = AsyncMock(content="Mocked LLM response")
-    return mock
+    from unittest.mock import patch, AsyncMock
+    mock_llm = AsyncMock()
+    mock_llm.ainvoke.return_value = AsyncMock(content="Mocked LLM response")
+    
+    # Giả lập astream generator
+    async def mock_stream(*args, **kwargs):
+        yield AsyncMock(content="Mocked LLM response")
+    mock_llm.astream = mock_stream
+
+    with patch("backend.services.llm.router.LLMRouter.get_client", return_value=mock_llm) as p:
+        yield p

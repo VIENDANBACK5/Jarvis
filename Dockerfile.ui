@@ -1,0 +1,21 @@
+# Stage 1: Build OpenHands React UI
+FROM node:22-alpine AS ui-builder
+WORKDIR /app
+COPY openhands/ ./openhands/
+WORKDIR /app/openhands
+# Clean up any local node_modules cloned
+RUN rm -rf node_modules
+# Install dependencies and build React UI production assets
+RUN npm install --legacy-peer-deps
+RUN npm run build
+
+# Stage 2: Python server serving built UI assets
+FROM python:3.10-slim
+WORKDIR /app
+COPY --from=ui-builder /app/openhands/build/ /app/backend/static/
+# Install Python backend dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY backend/ ./backend/
+EXPOSE 8000
+CMD ["python", "-m", "uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]

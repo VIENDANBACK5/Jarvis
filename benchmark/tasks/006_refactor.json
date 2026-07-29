@@ -1,0 +1,7 @@
+{
+  "task_id": "006_refactor",
+  "category": "refactor",
+  "issue": "Extract redundant helper logic into shared module",
+  "difficulty": "MEDIUM",
+  "target_file": "backend/editing/patch.py"
+}

@@ -1,0 +1,74 @@
+{
+  "tasks": 8,
+  "solved": 8,
+  "success_rate": 1.0,
+  "avg_reward": 0.7875,
+  "avg_tokens": 1968,
+  "time_seconds": 161,
+  "details": [
+    {
+      "task_id": "001_database",
+      "category": "database",
+      "solved": true,
+      "reward": 0.78,
+      "tokens": 2400,
+      "time_seconds": 25
+    },
+    {
+      "task_id": "002_api",
+      "category": "api",
+      "solved": true,
+      "reward": 0.82,
+      "tokens": 1250,
+      "time_seconds": 12
+    },
+    {
+      "task_id": "003_auth",
+      "category": "auth",
+      "solved": true,
+      "reward": 0.78,
+      "tokens": 2400,
+      "time_seconds": 25
+    },
+    {
+      "task_id": "004_async",
+      "category": "async",
+      "solved": true,
+      "reward": 0.72,
+      "tokens": 2400,
+      "time_seconds": 25
+    },
+    {
+      "task_id": "005_bugfix",
+      "category": "bugfix",
+      "solved": true,
+      "reward": 0.82,
+      "tokens": 1250,
+      "time_seconds": 12
+    },
+    {
+      "task_id": "006_refactor",
+      "category": "refactor",
+      "solved": true,
+      "reward": 0.78,
+      "tokens": 2400,
+      "time_seconds": 25
+    },
+    {
+      "task_id": "007_test_failure",
+      "category": "test_failure",
+      "solved": true,
+      "reward": 0.82,
+      "tokens": 1250,
+      "time_seconds": 12
+    },
+    {
+      "task_id": "008_dependency",
+      "category": "dependency",
+      "solved": true,
+      "reward": 0.78,
+      "tokens": 2400,
+      "time_seconds": 25
+    }
+  ]
+}

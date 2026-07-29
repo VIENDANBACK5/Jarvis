@@ -1,0 +1,7 @@
+{
+  "task_id": "001_database",
+  "category": "database",
+  "issue": "Migration fails when adding nullable column without default value",
+  "difficulty": "MEDIUM",
+  "target_file": "backend/models/user.py"
+}

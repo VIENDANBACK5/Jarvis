@@ -1,16 +1,19 @@
 import pytest
 
-from src.agents.graph import agent
+from backend.graph import agent
 
 
 @pytest.mark.asyncio
-async def test_agent_basic_flow():
-    result = await agent.ainvoke({"query": "Hello"})
+async def test_agent_returns_response():
+    result = await agent.ainvoke({"query": "test query"})
     assert "response" in result
+    # Mock LLM router trả về response mock không rỗng
+    assert len(result["response"]) > 0
 
 
 @pytest.mark.asyncio
-async def test_agent_state_structure():
-    result = await agent.ainvoke({"query": "Test query"})
-    assert isinstance(result, dict)
-    assert "query" in result
+async def test_agent_handles_empty_query():
+    result = await agent.ainvoke({"query": ""})
+    # Theo thiết kế, query rỗng sẽ trả về error hoặc response
+    assert "error" in result or "response" in result
+

@@ -10,12 +10,27 @@ async def test_health(client):
 
 
 @pytest.mark.asyncio
-async def test_chat_empty_message(client):
-    response = await client.post("/api/v1/chat", json={"message": ""})
-    assert response.status_code == 422  # Validation error
+async def test_chat_endpoint(client):
+    response = await client.post(
+        "/api/v1/chat",
+        json={"message": "Hello"}
+    )
+    assert response.status_code == 200
+    data = response.json()
+    assert "response" in data
+
+
+@pytest.mark.asyncio
+async def test_empty_message_rejected(client):
+    response = await client.post(
+        "/api/v1/chat",
+        json={"message": ""}
+    )
+    assert response.status_code == 422
 
 
 @pytest.mark.asyncio
 async def test_agent_status(client):
     response = await client.get("/api/v1/status")
     assert response.status_code == 200
+

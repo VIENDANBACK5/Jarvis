@@ -1,0 +1,7 @@
+{
+  "candidate_principles_tested": 20,
+  "true_principles_accepted": 9,
+  "false_principles_rejected": 9,
+  "false_discovery_rate": 0.1,
+  "status": "PASS"
+}

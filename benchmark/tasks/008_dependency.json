@@ -1,0 +1,7 @@
+{
+  "task_id": "008_dependency",
+  "category": "dependency",
+  "issue": "Pydantic v2 migration deprecation warning on dict method",
+  "difficulty": "MEDIUM",
+  "target_file": "backend/autonomy/discovery/principle_store.py"
+}

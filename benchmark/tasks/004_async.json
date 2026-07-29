@@ -1,0 +1,7 @@
+{
+  "task_id": "004_async",
+  "category": "async",
+  "issue": "Unhandled exception in background worker event loop",
+  "difficulty": "HARD",
+  "target_file": "backend/execution/worker.py"
+}

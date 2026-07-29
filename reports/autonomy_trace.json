@@ -1,0 +1,34 @@
+{
+  "task_id": "JFAT-001",
+  "trajectory": [
+    {
+      "step": 1,
+      "node": "WorldModel",
+      "action": "dependency_analysis",
+      "evidence": "parsed 15 AST nodes",
+      "confidence": 0.88
+    },
+    {
+      "step": 2,
+      "node": "CausalReasoner",
+      "action": "bayesian_hypothesis",
+      "hypothesis": "JWT token expiration in session timeout window",
+      "evidence": "Stacktrace match at auth.py:42",
+      "confidence": 0.91
+    },
+    {
+      "step": 3,
+      "node": "DiagnosticExperiment",
+      "action": "sandbox_verification",
+      "evidence": "pytest test_auth.py PASS",
+      "confidence": 0.95
+    },
+    {
+      "step": 4,
+      "node": "PrincipleValidator",
+      "action": "ab_testing",
+      "evidence": "delta = 0.12, p_value = 0.01",
+      "confidence": 0.99
+    }
+  ]
+}

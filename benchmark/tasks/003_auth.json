@@ -1,0 +1,7 @@
+{
+  "task_id": "003_auth",
+  "category": "auth",
+  "issue": "JWT token refresh fails after session timeout window",
+  "difficulty": "MEDIUM",
+  "target_file": "backend/security/auth.py"
+}

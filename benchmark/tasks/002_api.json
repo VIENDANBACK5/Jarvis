@@ -1,0 +1,7 @@
+{
+  "task_id": "002_api",
+  "category": "api",
+  "issue": "API endpoint returns 500 on timeout",
+  "difficulty": "EASY",
+  "target_file": "backend/api/routes.py"
+}

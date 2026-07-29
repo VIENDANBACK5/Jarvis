@@ -1,0 +1,7 @@
+{
+  "task_id": "007_test_failure",
+  "category": "test_failure",
+  "issue": "Pytest collection failure due to class name mismatch",
+  "difficulty": "EASY",
+  "target_file": "tests/test_workspace.py"
+}

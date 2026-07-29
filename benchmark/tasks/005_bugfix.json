@@ -1,0 +1,7 @@
+{
+  "task_id": "005_bugfix",
+  "category": "bugfix",
+  "issue": "Null pointer crash during symbol resolution",
+  "difficulty": "EASY",
+  "target_file": "backend/world_model/parser/symbol_resolver.py"
+}

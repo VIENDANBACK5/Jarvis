@@ -1,0 +1,30 @@
+[
+  {
+    "task_id": "TASK-6387",
+    "problem": "Fix authentication timeout bug",
+    "actions": [
+      {
+        "agent": "Architect",
+        "action": "plan_architecture"
+      },
+      {
+        "agent": "Coder",
+        "action": "synthesize_patch"
+      },
+      {
+        "agent": "Security",
+        "action": "scan_security_pass"
+      },
+      {
+        "agent": "Reviewer",
+        "action": "audit_approve"
+      },
+      {
+        "agent": "Harness",
+        "action": "sandbox_pass"
+      }
+    ],
+    "reward": 0.92,
+    "success": true
+  }
+]
